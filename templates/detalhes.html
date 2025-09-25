@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ titulo }}</h1>
+    </header>
+
+    <main>
+        {% if img %}
+            <img src="{{ img }}" alt="{{ titulo }}" class="filme-img">
+        {% endif %}
+        <p><a href="{{ torrent_link }}" target="_blank" class="btn magnet">Baixar via Magnet</a></p>
+        <p><a href="{{ url_for('index') }}" class="btn voltar">Voltar</a></p>
+    </main>
+</body>
+</html>
+

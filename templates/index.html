@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmes HDRTorrent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Filmes HDRTorrent</h1>
+        
+    </header>
+
+    <main class="filmes-container">
+        {% for filme in filmes %}
+        <div class="filme-card">
+            <a href="{{ url_for('detalhes', url=filme.link) }}">
+                <img src="{{ filme.img }}" alt="{{ filme.titulo }}">
+                <h3>{{ filme.titulo }}</h3>
+            </a>
+            <p>{{ filme.tipo }} | {{ filme.qualidade }}</p>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
+
